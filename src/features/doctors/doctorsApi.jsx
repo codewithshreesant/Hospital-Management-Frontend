@@ -30,7 +30,8 @@ const doctorsApi = createApi({
         updateDoctor : builder.mutation({
             query:({id, doctor}) => ({
                 url: `/doctor/${id}`,
-                method:'PUT'
+                method:'PUT',
+                body:doctor
             })
         }),
         deleteDoctor : builder.mutation({

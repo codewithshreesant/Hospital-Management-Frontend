@@ -21,6 +21,10 @@ import CreateNews from "../components/admin/CreateNews";
 import CreateBlog from "../components/admin/CreateBlog";
 import AdminNews from "../components/admin/News";
 import Blogs from "../components/admin/Blogs";
+import UpdateBlog from "../components/admin/UpdateBlog";
+import UpdateNews from "../components/admin/UpdateNews";
+import UpdateServices from "../components/admin/UpdateServices";
+import UpdateDoctor from "../components/admin/UpdateDoctor";
 
 const router = createBrowserRouter([
     {
@@ -105,6 +109,22 @@ const router = createBrowserRouter([
             {
                 path:'blog/create',
                 element:<CreateBlog />
+            },
+            {
+                path:'blog/update/:id',
+                element:<UpdateBlog />
+            },
+            {
+                path:'news/update/:id',
+                element:<UpdateNews />
+            },
+            {
+                path:'service/update/:id',
+                element:<UpdateServices />
+            },
+            {
+                path:'doctor/update/:id',
+                element:<UpdateDoctor />
             }
         ]
     }

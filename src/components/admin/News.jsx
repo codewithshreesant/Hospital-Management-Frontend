@@ -60,7 +60,9 @@ function AdminNews() {
                   <TableCell align="right">{news.reaction}</TableCell>
                   <TableCell align="right">
                     <Button onClick={()=>DeleteNews(news._id)}>Delete</Button>
-                    <Button>update</Button>
+                    <Button>
+                      <Link to={`/dashboard/news/update/${news._id}`}>update</Link>
+                    </Button>
                   </TableCell>
                 </TableRow>
               })

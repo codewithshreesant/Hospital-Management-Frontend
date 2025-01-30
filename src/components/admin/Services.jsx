@@ -55,7 +55,9 @@ function AdminServices() {
                                     <TableCell align="right">{(service.description).slice(0, 20)}....</TableCell>
                                     <TableCell align="right">
                                         <Button onClick={() => DeleteService(service._id)}>Delete</Button>
-                                        <Button>update</Button>
+                                        <Button>
+                                            <Link to={`/dashboard/service/update/${service._id}`}>update</Link>
+                                        </Button>
                                     </TableCell>
                                 </TableRow>
                             })

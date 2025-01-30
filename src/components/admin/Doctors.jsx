@@ -56,7 +56,9 @@ function AdminDoctors() {
                                     <TableCell align="right">{String(doctor.category)}</TableCell>
                                     <TableCell align="right">
                                         <Button onClick={() => DeleteDoctor(doctor._id)}>Delete</Button>
-                                        <Button>update</Button>
+                                        <Button>
+                                            <Link to={`/dashboard/doctor/update/${doctor._id}`}>update</Link>
+                                        </Button>
                                     </TableCell>
                                     {/* <TableCell align="right">{String(user.isLoggedIn)}</TableCell> */}
                                 </TableRow>

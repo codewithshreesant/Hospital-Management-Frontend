@@ -57,7 +57,9 @@ function Blogs() {
                   <TableCell align="right">{blog.reaction}</TableCell>
                   <TableCell align="right">
                     <Button onClick={()=>DeleteBlog(blog._id)}>Delete</Button>
-                    <Button>update</Button>
+                    <Button>
+                      <Link to={`/dashboard/blog/update/${blog._id}`}>update</Link>
+                    </Button>
                   </TableCell>
                 </TableRow>
               })
