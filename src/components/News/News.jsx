@@ -4,6 +4,7 @@ import { useGetBlogsQuery, useGetRecentBlogsQuery } from '../../features/blogs/b
 import { FaArrowRight } from "react-icons/fa6";
 import RecentBlogs from '../RecentBlogs';
 import Pagination from '../Pagination';
+import { Link } from 'react-router-dom';
 
 
 function News() {
@@ -19,7 +20,7 @@ function News() {
   
   return (
     <div>
-      <TopComp name='News' path='/images/top.jpg' desc='Blog Posts'/>
+      <TopComp name='News' path='/images/newstop.webp' desc='Blog Posts'/>
       <div className='grid grid-cols-[60vw_20vw]'>
         <div className='flex flex-col items-center my-[4rem] gap-[2rem]'>
           {
@@ -36,7 +37,7 @@ function News() {
                 </div>
                 <h1 className='text-[2.3rem] font-semibold text-blue-900'>{blog.title}</h1>
                 <p>{blog.description}</p>
-                <button className='flex items-center gap-[0.5rem] rounded-3xl bg-blue-200 px-[1rem] py-[0.6rem]'><span className='text-left text-blue-950 font-semibold'>Read More</span><FaArrowRight /></button>
+                <button className='flex items-center gap-[0.5rem] rounded-3xl bg-blue-200 px-[1rem] py-[0.6rem]'><span className='text-left text-blue-950 font-semibold'><Link to={`/singleblog/${blog._id}`}>Read More</Link></span><FaArrowRight /></button>
               </div>
             })
             

@@ -8,7 +8,7 @@ function Point() {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="md:flex flex-col items-center hidden">
       <h1 className="text-3xl font-bold mb-6">A passion for putting patients first.</h1>
 
       <div className="grid grid-cols-2 gap-4">

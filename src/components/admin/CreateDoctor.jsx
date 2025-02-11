@@ -11,7 +11,10 @@ function CreateDoctor() {
         name: '',
         email: '',
         category: '',
-        img: ''
+        img: '',
+        linkedin: '',
+        facebook: '',
+        instagram: ''
     })
 
     const handleChange = (e) => {
@@ -28,7 +31,7 @@ function CreateDoctor() {
             console.log(" create doctor response ", response);
             if (response?.data.statusCode === 200) {
                 alert('Doctor Created Successfully ');
-                setDoctorData({name:'', email:'', category:'', img:''});
+                setDoctorData({name:'', email:'', category:'', img:'', linkedin:'', instagram:'', facebook:''});
             }
         } catch (error) {
             console.log("Error occured while creating doctor ", error.message);
@@ -84,6 +87,33 @@ function CreateDoctor() {
                         label="image url"
                         name="img"
                         value={doctorData.img}
+                        onChange={handleChange}
+                        multiline
+                        maxRows={4}
+                    />
+                    <TextField
+                        id="linkedin"
+                        label="linkedin url"
+                        name="linkedin"
+                        value={doctorData.linkedin}
+                        onChange={handleChange}
+                        multiline
+                        maxRows={4}
+                    />
+                    <TextField
+                        id="facebook"
+                        label="facebook url"
+                        name="facebook"
+                        value={doctorData.facebook}
+                        onChange={handleChange}
+                        multiline
+                        maxRows={4}
+                    />
+                    <TextField
+                        id="instagram"
+                        label="instagram url"
+                        name="instagram"
+                        value={doctorData.instagram}
                         onChange={handleChange}
                         multiline
                         maxRows={4}

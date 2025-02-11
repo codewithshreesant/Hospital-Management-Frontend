@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useCreateContactMutation } from '../features/contact/ContactApi';
 
 function ContactForm() {
   const [name, setName] = useState('');
@@ -7,20 +8,16 @@ function ContactForm() {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
+  const [ createContact, {error, isLoading} ] = useCreateContactMutation();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     // Send the form data to your server (e.g., using fetch or axios)
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, subject, message }),
-      });
-
-      if (response.ok) {
+      const response = await createContact({name, email, subject, message});
+      console.log("contact form respose ", response);
+      if (response.data?.statusCode === 200) {
         // Handle successful submission (e.g., show a success message)
         alert('Message sent successfully!');
       } else {

@@ -21,6 +21,14 @@ const navigations = [
   {
     name: 'Blogs',
     path: '/dashboard/blogs'
+  },
+  {
+    name: 'Contacts',
+    path: '/dashboard/contacts'
+  },
+  {
+    name: 'Appointments',
+    path: '/dashboard/appointments'
   }
 ]
 

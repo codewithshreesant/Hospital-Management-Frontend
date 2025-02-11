@@ -9,7 +9,7 @@ const AppointmentCard = ({ icon, color, text, textColor }) => (
 
 const AppointmentSection = () => {
   return (
-    <div className='absolute left-[15%]'>
+    <div className='absolute left-[15%] hidden md:block'>
       <div className="flex justify-center items-center gap-[2rem] mt-[-3rem]">
         <AppointmentCard
           icon={<i className="fa-solid fa-calendar-days"></i>}

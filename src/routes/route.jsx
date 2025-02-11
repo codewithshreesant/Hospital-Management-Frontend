@@ -25,6 +25,17 @@ import UpdateBlog from "../components/admin/UpdateBlog";
 import UpdateNews from "../components/admin/UpdateNews";
 import UpdateServices from "../components/admin/UpdateServices";
 import UpdateDoctor from "../components/admin/UpdateDoctor";
+import SingleNews from "../components/News/SingleNews";
+import SingleBlog from "../components/News/SingleBlog";
+import SingleService from "../components/Services/SingleService";
+import SingleDoctor from "../components/Doctors/SingleDoctor";
+import Appointment from "../components/Appointment";
+import AdminContact from "../components/admin/AdminContact";
+import UpdateContact from "../components/admin/UpdateContact";
+import CreateContact from "../components/admin/CreateContact";
+import Appointments from "../components/admin/Appointments";
+import CreateAppointment from "../components/admin/CreateAppointment";
+import UpdateAppointment from "../components/admin/UpdateAppointment";
 
 const router = createBrowserRouter([
     {
@@ -55,7 +66,27 @@ const router = createBrowserRouter([
             {
                 path:'/contact',
                 element:<Contact />
-            }
+            },
+            {
+                path:'/singlenews/:id',
+                element:<SingleNews />
+            },
+            {
+                path:'/singleblog/:id',
+                element:<SingleBlog />
+            },
+            {
+                path:'/singleservice/:id',
+                element:<SingleService />
+            },
+            {
+                path:'/singledoctor/:id',
+                element:<SingleDoctor />
+            },
+            {
+                path:'/appointment',
+                element:<Appointment />
+            },
         ]
     },
     {
@@ -95,6 +126,10 @@ const router = createBrowserRouter([
                 element:<CreateService />
             },
             {
+                path:'contacts',
+                element:<AdminContact />
+            },
+            {
                 path:'news',
                 element:<AdminNews />
             },
@@ -125,6 +160,26 @@ const router = createBrowserRouter([
             {
                 path:'doctor/update/:id',
                 element:<UpdateDoctor />
+            },
+            {
+                path:'/dashboard/contact/update/:id',
+                element:<UpdateContact />
+            },
+            {
+                path:'/dashboard/contact/create',
+                element:<CreateContact />
+            },
+            {
+                path:'/dashboard/appointments',
+                element:<Appointments />
+            },
+            {
+                path:'/dashboard/appointment/create',
+                element: <CreateAppointment />
+            },
+            {
+                path:'appointment/update/:id',
+                element:<UpdateAppointment />
             }
         ]
     }

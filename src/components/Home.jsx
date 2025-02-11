@@ -11,16 +11,16 @@ import HomeNews from './HomeNews'
 function Home() {
   return (
     <div className='relative'>
-      <div className='h-[80vh] relative'>
+      <div className='md:h-[80vh] h-[50vh] relative'>
         <img src="/images/hero_section.jpg" alt="hero_image" className='heroSection' />
         <div className='w-full flex'>
           <div className='absolute top-[30%] left-[20%] w-[30vw]'>
             <h2 className='text-blue-400 font-bold care'>CARING FOR LIFE</h2>
-            <p className='text-[2.5rem] text-blue-800 font-semibold tracking-wider'>Leading the Way In Medical Excellence</p>
+            <p className='md:text-[2.5rem]  text-[1rem] text-blue-800 font-semibold tracking-wider'>Leading the Way In Medical Excellence</p>
             <Button name='Our Services' path='/services' />
           </div>
-          <div className='absolute right-[5rem] bottom-0 '>
-            <img src='/images/hero_section_person_enhanced.png' alt='person image not found' className='h-[80vh]'/>
+          <div className='absolute md:right-[5rem] right-[2rem] bottom-0 '>
+            <img src='/images/hero_section_person_enhanced.png' alt='person image not found' className='md:h-[80vh] h-[50vh]'/>
           </div>
         </div>
       

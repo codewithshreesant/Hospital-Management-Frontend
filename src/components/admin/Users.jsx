@@ -7,11 +7,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import { Button } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeUser } from '../../slice/user/UserSlice'
 
 function Users() {
     let { data, error, isLoading } = useGetUsersQuery();
     console.log("admin users data ", data);
+    let dispatch = useDispatch();
     return (
         <div>
             <h1>Users data</h1>
@@ -39,6 +42,7 @@ function Users() {
                                     <TableCell align="right">{user.email}</TableCell>
                                     <TableCell align="right">{String(user.isAdmin)}</TableCell>
                                     <TableCell align="right">{String(user.isLoggedIn)}</TableCell>
+                                    {user.isLoggedIn && <Button variant="contained" onClick={() => dispatch(removeUser())} size='small' style={{marginTop:"0.5rem"}}>Signout</Button>}
                                 </TableRow>
                             })
                         }

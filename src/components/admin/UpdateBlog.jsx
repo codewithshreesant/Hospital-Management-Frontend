@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useCreateBlogMutation, useGetBlogByIdQuery, useUpdateBlogMutation } from '../../features/blogs/blogApi';
 import { Button } from '@mui/material';
@@ -9,37 +9,49 @@ import { useNavigate } from 'react-router-dom';
 
 function UpdateBlog() {
   let { id } = useParams();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   let { data, error, isLoading } = useGetBlogByIdQuery(id);
   console.log("data by id blog ", data);
 
-  let [ updateBlog ] = useUpdateBlogMutation();
+  let [updateBlog] = useUpdateBlogMutation();
   const Blog = data?.data;
   let [blogsData, setBlogsData] = useState({
-    title: Blog?.title,
-    description: Blog?.description,
-    seen: Blog?.seen,
-    image: Blog?.image,
-    reaction: Blog?.reaction,
-    author: Blog?.author
-
+    title: '',
+    description: '',
+    seen: '',
+    image: '',
+    reaction: '',
+    author: ''
   })
 
-  const handleChange = (e) => {   
+  useEffect(() => {
+    if (Blog) {
+      setBlogsData({
+        title: Blog?.title,
+        description: Blog?.description,
+        seen: Blog?.seen,
+        image: Blog?.image,
+        reaction: Blog?.reaction,
+        author: Blog?.author
+      })
+    }
+  }, [Blog])
+
+  const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setBlogsData({ ...blogsData, [name]: value });
   }
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(blogsData);
     try {
-      const response = await updateBlog({id, blog:blogsData});
+      const response = await updateBlog({ id, blog: blogsData });
       console.log(" create blogs response ", response);
       if (response?.data.statusCode === 200) {
         alert(' Blog Updated Successfully ');
-        setBlogsData({ 
+        setBlogsData({
           title: '',
           description: '',
           seen: '',
@@ -131,7 +143,7 @@ function UpdateBlog() {
         <Button variant="contained" color='secondary' className='w-[12vw]' type='submit'>Update Blog</Button>
       </Box>
     </div>
-)
+  )
 }
 
 export default UpdateBlog

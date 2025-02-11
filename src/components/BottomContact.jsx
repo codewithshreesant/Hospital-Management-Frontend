@@ -3,7 +3,7 @@ import React from 'react';
 const BottomContact = () => {
   return (
     <div className="flex justify-center">
-      <div className='w-[80vw] h-[70vh]'>
+      <div className='w-[80vw] my-[3rem]'>
           <div className='flex flex-col items-center my-[2rem]'>
               <h2 className="text-xl font-semibold">GET IN TOUCH</h2>
               <h1 className='text-3xl font-semibold text-blue-900'>Contact</h1>

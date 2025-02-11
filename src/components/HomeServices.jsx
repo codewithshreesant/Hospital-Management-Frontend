@@ -13,7 +13,7 @@ const ServiceDetails = ({ title, description, showCheckUp, showBloodBank, showTe
         return showCheckUp &&
           <div>
             <h1 className='font-semibold text-3xl'>{title}</h1>
-            <p className='text-[1.1rem] text-justify'>{description}</p>
+            <p className='text-[1.1rem] text-justify h-[60vh] overflow-hidden'>{description}</p>
           </div>
       }
     case "DNA Testing":
@@ -21,7 +21,7 @@ const ServiceDetails = ({ title, description, showCheckUp, showBloodBank, showTe
         return showTesting &&
           <div>
             <h1 className='font-semibold text-3xl'>{title}</h1>
-            <p className='text-[1.1rem] text-justify'>{description}</p>
+            <p className='text-[1.1rem] text-justify h-[60vh] overflow-hidden'>{description}</p>
           </div>
       }
     case "Blood Bank":
@@ -29,7 +29,7 @@ const ServiceDetails = ({ title, description, showCheckUp, showBloodBank, showTe
         return showBloodBank &&
           <div>
             <h1 className='font-semibold text-3xl'>{title}</h1>
-            <p className='text-[1.1rem] text-justify'>{description}</p>
+            <p className='text-[1.1rem] text-justify h-[60vh] overflow-hidden'>{description}</p>
           </div>
       }
       case "Cardiogram":
@@ -37,7 +37,7 @@ const ServiceDetails = ({ title, description, showCheckUp, showBloodBank, showTe
           return showCardiogram &&
             <div>
               <h1 className='font-semibold text-3xl'>{title}</h1>
-              <p className='text-[1.1rem] text-justify'>{description}</p>
+              <p className='text-[1.1rem] text-justify h-[60vh] overflow-hidden'>{description}</p>
             </div>
         }
       default:

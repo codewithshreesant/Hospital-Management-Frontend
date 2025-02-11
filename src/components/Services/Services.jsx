@@ -3,6 +3,7 @@ import React from 'react'
 import { useGetServicesQuery } from '../../features/services/ServiceApi'
 import TopComp from '../TopComp';
 import { FaArrowRight } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 function Services() {
   let { data,error,isLoading } = useGetServicesQuery();
@@ -22,7 +23,7 @@ function Services() {
                   <div className='w-[20vw] ml-[2rem] my-[1rem] flex flex-col gap-[1rem]'>
                     <h1 className='text-[1.5rem] font-semibold text-blue-950'>{service.title}</h1>
                     <p>{(service.description).slice(0,100)}</p>
-                    <button className='flex items-center gap-[0.5rem]'><span className='text-left text-blue-500'>Learn More</span><FaArrowRight /></button>
+                    <button className='flex items-center gap-[0.5rem]'><span className='text-left text-blue-500'><Link to={`/singleservice/${service._id}`}>Learn More</Link></span><FaArrowRight /></button>
                   </div>
                 </div>
               })

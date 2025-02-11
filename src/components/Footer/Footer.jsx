@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react';  
 
 const Footer = () => {
     return (
         <footer className=' bg-blue-950 h-[70vh] flex justify-center items-center'>
             <div className=" text-white py-6 h-[40vh]  w-full">
-                <div className="container mx-auto flex justify-between items-center w-[80vw]">
+                <div className="container mx-auto flex justify-between items-center md:w-[80vw] w-full">
                     <div>
                         <h1 className="text-3xl font-semibold mb-2">MEDDICAL</h1>
                         <p className="text-sm">Leading the Way in Medical Excellence, Trusted Care.</p>
@@ -26,7 +26,7 @@ const Footer = () => {
                             <li>Address: 0123 Some place, Some country</li>
                         </ul>
                     </div>
-                    <div>
+                    <div className='hidden'>
                         <h3 className="text-sm font-semibold">Newsletter</h3>
                         <div className="flex items-center">
                             <input type="email" placeholder="Enter your email address" className="border border-gray-300 bg-blue-200 rounded-md px-4 py-2 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-950" />

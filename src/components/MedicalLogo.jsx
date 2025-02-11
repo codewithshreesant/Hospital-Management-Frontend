@@ -8,6 +8,7 @@ function MedicalLogo() {
         <span className="text-blue-950 text-[2.5rem] mr-1">M</span>
         <span className="text-blue-950 text-[2.5rem] mr-1">E</span>
         <span className="text-blue-950 text-[2.5rem] mr-1">D</span>
+        <span className="text-blue-950 text-[2.5rem] mr-1">D</span>
         <span className="text-sky-400 text-[2.5rem] mr-1">I</span>
         <span className="text-sky-400 text-[2.5rem] mr-1">C</span>
         <span className="text-sky-400 text-[2.5rem] mr-1">A</span>

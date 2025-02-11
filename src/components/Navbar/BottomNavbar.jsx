@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Button from '../Button'
 import { FiSearch } from "react-icons/fi";
 import SmallNavbar from './smallNavbar';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeUser } from '../../slice/user/UserSlice';
 
 const sections = [
@@ -36,6 +36,10 @@ const sections = [
 
 
 function BottomNavbar() {
+    const user = useSelector(state => state.user);
+    console.log("user ", user);
+    const actualUser = user?.user;
+    console.log("actual user ", actualUser)
     let dispatch = useDispatch();
     return (
         <div>
@@ -50,11 +54,26 @@ function BottomNavbar() {
                     }
                 </ul>
                 <div className='flex gap-[2rem] items-center'>
-                    <h2 className='text-white'>
+                    {/* <h2 className='text-white'>
                         <FiSearch size={30} />
-                    </h2>
+                    </h2> */}
                     <Button name='Appointment' path='/appointment' />
-                    <button onClick={()=>dispatch(removeUser())}>Logout</button>
+                    { !actualUser &&
+                    <button className="bg-purple-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <Link to="/register">Signup</Link>
+                        
+                    </button>
+                    }
+                    { !actualUser &&
+                    <button className="bg-purple-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <Link to="/login">Login</Link>
+                    </button>
+                    }
+                    { actualUser &&
+                    <button onClick={() => dispatch(removeUser())} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        Logout
+                    </button>
+                    }
                 </div>
             </div>
             <SmallNavbar />
